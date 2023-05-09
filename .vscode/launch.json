@@ -1,0 +1,29 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: eval",
+            "type": "python",
+            "request": "launch",
+            "program": "/works/sunxusheng/PSMNet/finetune.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "stopOnEntry": false,
+            "env":{
+                "CUDA_VISIBLE_DEVICES":"7"
+            },
+            "args": [
+                "--maxdisp", "192",
+                "--model", "stackhourglass",
+                "--datatype", "2015",
+                "--datapath", "dataset/data_scene_flow/training/",
+                "--epochs", "300",
+                "--loadmodel", "./pretrain/pretrained_model_KITTI2015.tar",
+                "--savemodel", "./trained/"
+            ]
+        }
+    ]
+}
